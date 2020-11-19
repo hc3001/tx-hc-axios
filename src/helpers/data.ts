@@ -9,9 +9,10 @@ export function transformRequest(data: any): any {
 
 export function transformResponse(data: any): any {
   if (typeof data === 'string') {
-    let r = JSON.parse(data)
-    if (isPlainObject(r)) {
-      data = r
+    try {
+      data = JSON.parse(data)
+    } catch (e) {
+      console.log()
     }
   }
   return data
