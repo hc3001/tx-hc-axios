@@ -122,6 +122,12 @@ function registerExtendRouter() {
 	})
 }
 
+function registerInterceptorRouter() {
+	router.get('/interceptor/get', function(req, res) {
+		res.end('hello')
+	})
+}
+
 registerSimpleRouter()
 
 registerBaseRouter()
@@ -129,6 +135,8 @@ registerBaseRouter()
 registerErrorRouter()
 
 registerExtendRouter()
+
+registerInterceptorRouter()
 
 app.use(router)
 const port = process.env.PORT || 8080
